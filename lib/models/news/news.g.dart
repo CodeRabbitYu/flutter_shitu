@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'new_json.dart';
+part of 'news.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-New_json _$New_jsonFromJson(Map<String, dynamic> json) {
-  return New_json()
+News _$NewsFromJson(Map<String, dynamic> json) {
+  return News()
     ..info = json['info'] == null
         ? null
-        : New_json_info.fromJson(json['info'] as Map<String, dynamic>)
+        : News_info.fromJson(json['info'] as Map<String, dynamic>)
     ..list = (json['list'] as List)
-        ?.map((e) => e == null
-            ? null
-            : New_json_list.fromJson(e as Map<String, dynamic>))
+        ?.map((e) =>
+            e == null ? null : News_list.fromJson(e as Map<String, dynamic>))
         ?.toList();
 }
 
-Map<String, dynamic> _$New_jsonToJson(New_json instance) =>
+Map<String, dynamic> _$NewsToJson(News instance) =>
     <String, dynamic>{'info': instance.info, 'list': instance.list};

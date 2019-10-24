@@ -176,6 +176,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_mobx:
+    dependency: "direct main"
+    description:
+      name: flutter_mobx
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.3.3+1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -202,6 +209,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.2.0"
+  hnpwa_client:
+    dependency: "direct main"
+    description:
+      name: hnpwa_client
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.0.0"
   html:
     dependency: transitive
     description:
@@ -300,6 +314,20 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.9.6+3"
+  mobx:
+    dependency: "direct main"
+    description:
+      name: mobx
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.3.8+1"
+  mobx_codegen:
+    dependency: "direct main"
+    description:
+      name: mobx_codegen
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.3.9+1"
   package_config:
     dependency: transitive
     description:
@@ -335,6 +363,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.4.0"
+  provider:
+    dependency: "direct main"
+    description:
+      name: provider
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.1.0+1"
   pub_semver:
     dependency: transitive
     description:
@@ -349,6 +384,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.1.5"
+  pull_to_refresh:
+    dependency: "direct main"
+    description:
+      name: pull_to_refresh
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.5.7"
   quiver:
     dependency: transitive
     description:
@@ -452,6 +494,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.1.6"
+  url_launcher:
+    dependency: "direct main"
+    description:
+      name: url_launcher
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "5.2.3"
   vector_math:
     dependency: transitive
     description:
@@ -482,4 +531,4 @@ packages:
     version: "2.2.0"
 sdks:
   dart: ">2.4.0 <3.0.0"
-  flutter: ">=1.2.0"
+  flutter: ">=1.9.1+hotfix.4 <2.0.0"

@@ -1,10 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'new_json_list.g.dart';
+part 'news_list.g.dart';
 
 @JsonSerializable()
-class New_json_list {
-    New_json_list();
+class News_list {
+    News_list();
 
     String id;
     String type;
@@ -48,7 +48,8 @@ class New_json_list {
     num t;
     String ding;
     String favourite;
+    String clipper;
     
-    factory New_json_list.fromJson(Map<String,dynamic> json) => _$New_json_listFromJson(json);
-    Map<String, dynamic> toJson() => _$New_json_listToJson(this);
+    factory News_list.fromJson(Map<String,dynamic> json) => _$News_listFromJson(json);
+    Map<String, dynamic> toJson() => _$News_listToJson(this);
 }

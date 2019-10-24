@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'new_json_list.dart';
+part of 'news_list.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-New_json_list _$New_json_listFromJson(Map<String, dynamic> json) {
-  return New_json_list()
+News_list _$News_listFromJson(Map<String, dynamic> json) {
+  return News_list()
     ..id = json['id'] as String
     ..type = json['type'] as String
     ..text = json['text'] as String
@@ -49,11 +49,11 @@ New_json_list _$New_json_listFromJson(Map<String, dynamic> json) {
     ..tag = json['tag'] as String
     ..t = json['t'] as num
     ..ding = json['ding'] as String
-    ..favourite = json['favourite'] as String;
+    ..favourite = json['favourite'] as String
+    ..clipper = json['clipper'] as String;
 }
 
-Map<String, dynamic> _$New_json_listToJson(New_json_list instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$News_listToJson(News_list instance) => <String, dynamic>{
       'id': instance.id,
       'type': instance.type,
       'text': instance.text,
@@ -95,5 +95,6 @@ Map<String, dynamic> _$New_json_listToJson(New_json_list instance) =>
       'tag': instance.tag,
       't': instance.t,
       'ding': instance.ding,
-      'favourite': instance.favourite
+      'favourite': instance.favourite,
+      'clipper': instance.clipper
     };

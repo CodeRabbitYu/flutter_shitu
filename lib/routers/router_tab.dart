@@ -2,7 +2,7 @@
 * Created by Rabbit on 2019/09/27.
 */
 import 'package:flutter/material.dart';
-import 'package:flutter_shitu/pages/main/main.dart';
+import 'package:flutter_shitu/pages/mine/mine.dart';
 import 'package:flutter_shitu/pages/news/news.dart';
 import 'router_empty.dart';
 
@@ -23,7 +23,7 @@ class _Item {
 
 class _AppTabState extends State<AppTab> {
   List<Widget> _tabPages = List();
-  List<Widget> tabPages = [ShiTu(), News(), Main()];
+  List<Widget> tabPages = [];
 
   int _currentIndex = 0;
   List tabData = [
@@ -66,7 +66,7 @@ class _AppTabState extends State<AppTab> {
     //   );
     // }
 
-    _tabPages..add(News())..add(Empty())..add(Empty());
+    _tabPages..add(ShiTu())..add(Empty())..add(Empty());
     // _tabPages.addAll([ShiTu(), Empty(), Empty()]);
   }
 
@@ -121,11 +121,11 @@ class _AppTabState extends State<AppTab> {
       _currentIndex = index;
     });
     if (index == 1 || index == 2) {
-      var page = index == 1 ? News() : Main();
+      var page = index == 1 ? News() : Mine();
 
       if (_tabPages[index] is ShiTu ||
           _tabPages[index] is News ||
-          _tabPages[index] is Main) return;
+          _tabPages[index] is Mine) return;
 
       _tabPages
         ..removeAt(index)

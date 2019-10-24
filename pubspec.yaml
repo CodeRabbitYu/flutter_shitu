@@ -31,6 +31,17 @@ dependencies:
 
   dio: ^3.0.2 #latest version
 
+  pull_to_refresh: ^1.5.7
+
+  mobx: any
+  flutter_mobx: any
+  mobx_codegen: any
+
+  provider: any
+
+  hnpwa_client: any
+  url_launcher: any
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

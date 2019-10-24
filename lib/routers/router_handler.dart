@@ -1,6 +1,6 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_shitu/pages/main/main.dart';
+import 'package:flutter_shitu/pages/mine/mine.dart';
 import 'package:flutter_shitu/pages/shitu/shitu.dart';
 import 'package:flutter_shitu/pages/launch/launch.dart';
 import 'package:flutter_shitu/routers/router_tab.dart';
@@ -25,6 +25,6 @@ var shituHandler = new Handler(
 
 var mainHandler = new Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-    return new Main();
+    return new Mine();
   },
 );
