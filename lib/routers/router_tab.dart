@@ -3,7 +3,7 @@
 */
 import 'package:flutter/material.dart';
 import 'package:flutter_shitu/pages/mine/mine.dart';
-import 'package:flutter_shitu/pages/news/news.dart';
+import 'package:flutter_shitu/pages/collections/index.dart';
 import 'router_empty.dart';
 
 import 'package:flutter_shitu/pages/shitu/shitu.dart';
@@ -121,10 +121,10 @@ class _AppTabState extends State<AppTab> {
       _currentIndex = index;
     });
     if (index == 1 || index == 2) {
-      var page = index == 1 ? News() : Mine();
+      var page = index == 1 ? Collections() : Mine();
 
       if (_tabPages[index] is ShiTu ||
-          _tabPages[index] is News ||
+          _tabPages[index] is Collections ||
           _tabPages[index] is Mine) return;
 
       _tabPages

@@ -1,3 +1,3 @@
-export 'news/news_info.dart' ; 
-export 'news/news_list.dart' ; 
-export 'news/news.dart' ; 
+export 'collections/collections.dart' ; 
+export 'collections/collectionsInfo.dart' ; 
+export 'collections/collectionsList.dart' ; 

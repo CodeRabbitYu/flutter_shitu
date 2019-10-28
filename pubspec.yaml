@@ -33,11 +33,11 @@ dependencies:
 
   pull_to_refresh: ^1.5.7
 
-  mobx: any
-  flutter_mobx: any
-  mobx_codegen: any
+  mobx: 0.3.8+1
+  flutter_mobx: 0.3.3+1
+  mobx_codegen: 0.3.9+1
 
-  provider: any
+  provider: 3.1.0+1
 
   hnpwa_client: any
   url_launcher: any

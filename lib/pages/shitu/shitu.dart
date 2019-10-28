@@ -7,7 +7,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_animations/simple_animations.dart';
 
-import 'package:flutter_shitu/stores/shitu/shitu_store.dart';
+import 'package:flutter_shitu/stores/shitu/index.dart';
 
 class ShiTu extends StatefulWidget {
   ShiTu({Key key}) : super(key: key);
@@ -25,9 +25,9 @@ class _ShiTuState extends State<ShiTu> {
   Widget build(BuildContext context) {
     print('build --------- ShiTu');
 
-    final store = Provider.of<ShiTuStore>(context);
+    ShiTuStore store = Provider.of<ShiTuStore>(context);
 
-    print('shitu_store ---- $store ++++++ ${store.imageUrl}');
+    // print('shitu_store ---- $store ++++++ ${store.imageUrl}');
 
     final size = MediaQuery.of(context).size;
     final width = size.width;
@@ -53,65 +53,63 @@ class _ShiTuState extends State<ShiTu> {
     ]);
 
     return Observer(
-      builder: (_) => MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('识兔'),
-          ),
-          body: Stack(
-            alignment: Alignment.centerLeft,
-            children: <Widget>[
-              Image.network(
-                store.imageUrl,
-                fit: BoxFit.fitHeight,
-                // alignment: Alignment.topCenter,
-                height: height,
-                // width: width,
+      builder: (_) => Scaffold(
+        appBar: AppBar(
+          title: Text('识兔'),
+        ),
+        body: Stack(
+          alignment: Alignment.centerLeft,
+          children: <Widget>[
+            Image.network(
+              store.imageUrl,
+              fit: BoxFit.fitHeight,
+              // alignment: Alignment.topCenter,
+              height: height,
+              // width: width,
+            ),
+            BackdropFilter(
+              filter: ImageFilter.blur(
+                sigmaX: 5,
+                sigmaY: 5,
               ),
-              BackdropFilter(
-                filter: ImageFilter.blur(
-                  sigmaX: 5,
-                  sigmaY: 5,
-                ),
-                child: Container(
-                  color: Colors.white.withOpacity(0.1),
-                ),
+              child: Container(
+                color: Colors.white.withOpacity(0.1),
               ),
-              ControlledAnimation(
-                playback: Playback.PLAY_FORWARD,
-                duration: tween.duration,
-                // duration: Duration(milliseconds: 500),
-                tween: tween,
-                curve: Curves.bounceOut,
+            ),
+            ControlledAnimation(
+              playback: Playback.PLAY_FORWARD,
+              duration: tween.duration,
+              // duration: Duration(milliseconds: 500),
+              tween: tween,
+              curve: Curves.bounceOut,
 
-                builder: (context, animation) {
-                  return Container(
-                    margin: animation['padding'],
-                    width: 100,
-                    height: 44,
-                    // color: animation["color"],
-                    child: RaisedButton(
-                      child: Text(
-                        '点我搜索',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      onPressed: () async {
-                        // await showDeleteConfirmDialog1('222222');
-                      },
-                      color: Colors.lightBlue,
-                      shape: StadiumBorder(),
+              builder: (context, animation) {
+                return Container(
+                  margin: animation['padding'],
+                  width: 100,
+                  height: 44,
+                  // color: animation["color"],
+                  child: RaisedButton(
+                    child: Text(
+                      '点我搜索',
+                      style: TextStyle(color: Colors.white),
                     ),
-                    decoration: BoxDecoration(
-                      color: Colors.lightBlue,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(30.0),
-                      ),
+                    onPressed: () async {
+                      // await showDeleteConfirmDialog1('222222');
+                    },
+                    color: Colors.lightBlue,
+                    shape: StadiumBorder(),
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.lightBlue,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(30.0),
                     ),
-                  );
-                },
-              ),
-            ],
-          ),
+                  ),
+                );
+              },
+            ),
+          ],
         ),
       ),
     );
