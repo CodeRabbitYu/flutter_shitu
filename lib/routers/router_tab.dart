@@ -123,6 +123,9 @@ class _AppTabState extends State<AppTab> {
     if (index == 1 || index == 2) {
       var page = index == 1 ? Collections() : Mine();
 
+      // print(_tabPages.contains(Collections()));
+      // print(_tabPages);
+
       if (_tabPages[index] is ShiTu ||
           _tabPages[index] is Collections ||
           _tabPages[index] is Mine) return;

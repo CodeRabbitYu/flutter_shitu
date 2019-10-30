@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
           theme: ThemeData(backgroundColor: Colors.white),
           home: Scaffold(
             resizeToAvoidBottomPadding: false,
-            body: Launch(),
+            body: Collections(),
           ),
           onGenerateRoute: Application.router.generator,
         ),

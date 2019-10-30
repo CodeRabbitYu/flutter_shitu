@@ -16,12 +16,12 @@ class ImageClipper extends CustomPainter {
     // print('physicalSize ---- ${ui.window.physicalSize}');
 
     // print('$image ---- $left ---- $top ---- $right ---- $bottom');
-    print('image ---- $image ---- ${image.width} ---- ${image.height}');
+    // print('image ---- $image ---- ${image.width} ---- ${image.height}');
 
     Size physicalSize = ui.window.physicalSize;
 
-    print(
-        'physicalSize  ---- ${physicalSize.width} ---- ${physicalSize.height}');
+    // print(
+    //     'physicalSize  ---- ${physicalSize.width} ---- ${physicalSize.height}');
 
     num image_item_width =
         physicalSize.height / image.height * (physicalSize.width * 0.6);
@@ -30,7 +30,7 @@ class ImageClipper extends CustomPainter {
 
     // print('$size ---- ${size.width} ---- ${size.width}');
 
-    print('image_item_width ===== $widthToHeight');
+    // print('image_item_width ===== $widthToHeight');
 
     // TODO: implement paint
     Paint paint = Paint();

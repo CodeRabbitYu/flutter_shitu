@@ -16,9 +16,11 @@ class ContentItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.centerLeft,
+      alignment: Alignment.topLeft,
       padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           TextItem(text: item.text),
           ImageItem(

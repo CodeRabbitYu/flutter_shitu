@@ -22,7 +22,7 @@ class _MineState extends State<Mine> {
   Widget build(BuildContext context) {
     final store = Provider.of<ShiTuStore>(context);
 
-    // print('mine ---- $store ++++++ ${store.imageUrl}');
+    print('build --------- Mine');
 
     return MaterialApp(
       home: Scaffold(

@@ -11,9 +11,12 @@ class TextItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(fontSize: 16),
+    return Container(
+      child: Text(
+        text,
+        style: TextStyle(fontSize: 16),
+      ),
+      padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
     );
   }
 }

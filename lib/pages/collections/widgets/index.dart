@@ -17,16 +17,20 @@ class NewsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        UserInfo(
-            profileImage: item.profile_image,
-            name: item.name,
-            userInfoTap: () {
-              print('UserInfoTap --- ');
-            }),
-        ContentItem(item: item, clipperImage: clipperImage),
-      ],
+    return Container(
+      color: Colors.white,
+      padding: EdgeInsets.only(bottom: 10),
+      child: Column(
+        children: <Widget>[
+          UserInfo(
+              profileImage: item.profile_image,
+              name: item.name,
+              userInfoTap: () {
+                print('UserInfoTap --- ');
+              }),
+          ContentItem(item: item, clipperImage: clipperImage),
+        ],
+      ),
     );
   }
 }

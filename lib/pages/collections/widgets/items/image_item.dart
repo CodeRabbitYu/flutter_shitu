@@ -26,7 +26,7 @@ class ImageItem extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     Size physicalSize = window.physicalSize / window.devicePixelRatio;
 
-    print('${size.width}-------- ${physicalSize.width}');
+    // print('-------- ${imageWidth / physicalSize.width}');
 
     if (clipperImage != null) {
       return Container(
@@ -36,14 +36,12 @@ class ImageItem extends StatelessWidget {
           children: <Widget>[
             CustomPaint(
               painter: clipperImage,
-              size:
-                  Size(physicalSize.width * 0.5 + 6, physicalSize.height * 0.6),
+              size: Size(physicalSize.width * 0.6, physicalSize.height * 0.6),
             ),
             Positioned(
               bottom: 0.0,
               right: 0,
               child: Container(
-                // color: Color.fromRGBO(0, 0, 0, 0.6),
                 padding: EdgeInsets.fromLTRB(5, 1, 5, 1),
                 child: Text(
                   '长图',

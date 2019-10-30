@@ -45,8 +45,6 @@ abstract class _CollectionsMobx with Store {
       }
     }
 
-    print('????? ${newsData.info.maxid}');
-
     return newsData;
   }
 
