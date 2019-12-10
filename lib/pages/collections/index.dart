@@ -1,3 +1,6 @@
+import 'package:flutter/gestures.dart';
+import 'package:flutter_shitu/widgets/overlayer/overlayer_container.dart';
+
 ///
 /// Create by Rabbit on 2019/09/29.
 ///
@@ -17,6 +20,11 @@ class TopTabBar {
   final num type;
 }
 
+enum DropdownPosition {
+  BELOW,
+  RIGHT,
+}
+
 const List<TopTabBar> _topTabBar = const <TopTabBar>[
   const TopTabBar(title: '全部', icon: Icons.directions_car, type: 1),
   const TopTabBar(title: '视频', icon: Icons.directions_bike, type: 41),
@@ -25,13 +33,19 @@ const List<TopTabBar> _topTabBar = const <TopTabBar>[
 ];
 
 class Collections extends StatefulWidget {
-  Collections({Key key}) : super(key: key);
+  final DropdownPosition position;
+
+  Collections({
+    Key key,
+    this.position = DropdownPosition.RIGHT,
+  }) : super(key: key);
 
   _CollectionsState createState() => _CollectionsState();
 }
 
 class _CollectionsState extends State<Collections> {
   String title = '百思不得姐';
+  bool _isShow = false;
 
   @override
   void initState() {
@@ -49,31 +63,43 @@ class _CollectionsState extends State<Collections> {
             title: Text(title),
             bottom: TabBar(
               isScrollable: false,
+              // indicatorColor: Colors.red,
+              indicatorSize: TabBarIndicatorSize.label,
+              // indicatorPadding: EdgeInsets.only(left: 40),
+              labelStyle: TextStyle(fontSize: 18),
               tabs: _topTabBar.map(
                 (TopTabBar tabBar) {
                   return Tab(
                     text: tabBar.title,
-                    icon: Icon(tabBar.icon),
+                    // icon: Icon(tabBar.icon),
                   );
                 },
               ).toList(),
             ),
           ),
-          body: TabBarView(
-            children: _topTabBar.map(
-              (TopTabBar tabbar) {
-                return KeepAliveWidget(CollectionsList(
-                  type: tabbar.type,
-                ));
-              },
-            ).toList(),
+          body: Stack(
+            children: <Widget>[
+              TabBarView(
+                children: _topTabBar.map(
+                  (TopTabBar tabbar) {
+                    return KeepAliveWidget(CollectionsList(
+                      type: tabbar.type,
+                    ));
+                  },
+                ).toList(),
+              ),
+            ],
           ),
           floatingActionButton: FloatingActionButton(
             child: Text('更新'),
-            onPressed: () {
-              this.setState(() {
-                title = title + '1';
-              });
+            onPressed: () async {
+              // await showDeleteConfirmDialog1('111');
+              // this.setState(() {
+              //   title = title + '1';
+              // });
+              // setState(() {
+              //   _isShow = !_isShow;
+              // });
             },
           ),
         ),

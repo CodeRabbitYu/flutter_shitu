@@ -49,7 +49,8 @@ CollectionsList _$CollectionsListFromJson(Map<String, dynamic> json) {
     ..tag = json['tag'] as String
     ..t = json['t'] as num
     ..ding = json['ding'] as String
-    ..favourite = json['favourite'] as String;
+    ..favourite = json['favourite'] as String
+    ..isLongImage = json['isLongImage'] as bool;
 }
 
 Map<String, dynamic> _$CollectionsListToJson(CollectionsList instance) =>
@@ -95,5 +96,6 @@ Map<String, dynamic> _$CollectionsListToJson(CollectionsList instance) =>
       'tag': instance.tag,
       't': instance.t,
       'ding': instance.ding,
-      'favourite': instance.favourite
+      'favourite': instance.favourite,
+      'isLongImage': instance.isLongImage
     };

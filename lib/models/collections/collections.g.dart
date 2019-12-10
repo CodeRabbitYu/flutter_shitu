@@ -6,8 +6,8 @@ part of 'collections.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-CollectionsModel _$CollectionsModelFromJson(Map<String, dynamic> json) {
-  return CollectionsModel()
+Collections _$CollectionsFromJson(Map<String, dynamic> json) {
+  return Collections()
     ..info = json['info'] == null
         ? null
         : CollectionsInfo.fromJson(json['info'] as Map<String, dynamic>)
@@ -18,5 +18,5 @@ CollectionsModel _$CollectionsModelFromJson(Map<String, dynamic> json) {
         ?.toList();
 }
 
-Map<String, dynamic> _$CollectionsModelToJson(CollectionsModel instance) =>
+Map<String, dynamic> _$CollectionsToJson(Collections instance) =>
     <String, dynamic>{'info': instance.info, 'list': instance.list};

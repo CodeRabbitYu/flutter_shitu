@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_shitu/models/index.dart';
 import 'package:flutter_shitu/utils/image_clipper.dart';
@@ -17,35 +18,57 @@ class CollectionsMobx = _CollectionsMobx with _$CollectionsMobx;
 /// 先使用回调的方式来更新页面，之后会集成redux或者mobx来做数据管理
 abstract class _CollectionsMobx with Store {
   @observable
-  CollectionsModel newsData;
+  CollectionsModel collectionsData;
+
+  @observable
+  List<CollectionsList> collectionsList;
 
   @observable
   List clippers = [];
 
   @observable
-  String maxid = '';
+  String maxtime = '123';
 
-  loadNewsData() async {
-    final newData = await request
-        .get('http://api.budejie.com/api/api_open.php?a=list&c=data&type=');
+  Future loadCollectionsData(num type, [String value = '']) async {
+    final collections = await request.get(
+        'http://api.budejie.com/api/api_open.php?a=list&c=data&type=$type&maxtime=$value');
 
-    newsData = CollectionsModel.fromJson(newData.data);
+    // 'http://api.budejie.com/api/api_open.php?a=list&c=data&type=${type}&maxtime=${maxtime}';
 
-    maxid = newsData.info.maxid;
-    Size physicalSize = ui.window.physicalSize;
+    debugPrint('maxtime: $maxtime');
 
-    for (var news in newsData.list) {
+    final collectionsData = CollectionsModel.fromJson(collections.data);
+
+    if (value == null || value == '') {
+      collectionsList = collectionsData.list;
+      maxtime = collectionsData.info.maxtime;
+    } else {
+      collectionsList.addAll(collectionsData.list);
+      maxtime = collectionsData.info.maxtime;
+    }
+
+    Size physicalSize = ui.window.physicalSize / ui.window.devicePixelRatio;
+    var isLongImage = false;
+    for (var news in collectionsData.list) {
       if (double.parse(news.height) > physicalSize.height &&
           news.is_gif == 0.toString()) {
         var img = await handleImage(news.cdn_img);
         var clipperImage = ImageClipper(img);
+        isLongImage = true;
         clippers.add(clipperImage);
+        // collectionsList.add(isLongImage);
       } else {
+        isLongImage = false;
         clippers.add(null);
       }
     }
 
-    return newsData;
+    // debugPrint('_collectionsData: ${collectionsList.length}');
+
+    debugPrint(
+        'CollectionData: ${collectionsData.list[0].text} type: $type length: ${collectionsList.length} XXX: $maxtime');
+
+    return collectionsData;
   }
 
   Future<ui.Image> handleImage(pic) async {

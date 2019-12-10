@@ -4,4 +4,4 @@
 /// flutter packages pub run build_runner build
 /// flutter packages pub run json_model
 
-export 'shitu/shitu_store.dart';
+// export 'shitu/shitu_store.dart';

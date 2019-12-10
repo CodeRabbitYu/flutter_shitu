@@ -59,15 +59,17 @@ class ImageItem extends StatelessWidget {
         ),
       );
     }
-
-    return Container(
-      alignment: Alignment.topLeft,
-      child: Image.network(
-        image,
-        // height: 1000,
-        // width: size.width * 0.88,
-        fit: BoxFit.fill,
-      ),
-    );
+    if (image != null) {
+      return Container(
+        alignment: Alignment.topLeft,
+        child: Image.network(
+          image,
+          // height: 1000,
+          // width: size.width * 0.88,
+          fit: BoxFit.fill,
+        ),
+      );
+    }
+    return Container();
   }
 }

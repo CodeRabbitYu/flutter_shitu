@@ -48,6 +48,7 @@ class CollectionsList {
     num t;
     String ding;
     String favourite;
+    bool isLongImage;
     
     factory CollectionsList.fromJson(Map<String,dynamic> json) => _$CollectionsListFromJson(json);
     Map<String, dynamic> toJson() => _$CollectionsListToJson(this);

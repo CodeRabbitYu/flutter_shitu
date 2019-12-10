@@ -10,10 +10,12 @@ import 'package:flutter_shitu/pages/collections/widgets/items/index.dart';
 import 'package:flutter_shitu/pages/collections/widgets/user_info.dart';
 
 class NewsItem extends StatelessWidget {
-  const NewsItem({Key key, this.item, this.clipperImage}) : super(key: key);
+  const NewsItem({Key key, this.item, this.clipperImage, this.itemTap})
+      : super(key: key);
 
   final CollectionsList item;
   final clipperImage;
+  final itemTap;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class NewsItem extends StatelessWidget {
               userInfoTap: () {
                 print('UserInfoTap --- ');
               }),
-          ContentItem(item: item, clipperImage: clipperImage),
+          ContentItem(item: item, clipperImage: clipperImage, itemTap: itemTap),
         ],
       ),
     );
